@@ -1,0 +1,41 @@
+<app-navigation></app-navigation>
+<div class="container-fluid makeup-container">
+  <form>
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="ref">Ref No. *</label>
+          <input [(ngModel)]="makeup.ref" type="text" class="form-control form-control-sm" id="ref" name="ref" disabled>
+        </div>
+        <h4>Associate Product From Inventory</h4>
+        <div class="form-group">
+          <label for="product-code">Product Code</label>
+          <select class="form-control form-control-sm" id="product-code" [(ngModel)]="selectedInventory" name="inventory"
+                  (change)="onChange($event.target.value)">
+            <option *ngFor="let i of inventory" [value]="i.title">{{i.title}}</option>
+          </select>
+        </div>
+        <h4 *ngIf="makeup.productCodes.length >= 1">Product List</h4>
+        <div *ngFor="let productCode of makeup.productCodes; let i = index">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-9">
+                <input id="product-{{i}}" class="form-control form-control-sm" type="text"
+                       [ngModel]="productCode" name="productCode-{{i}}" disabled />
+              </div>
+              <div class="col-3">
+                <button class="btn btn-light" (click)="removeProduct(productCode, i)">Remove</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="makeup.productCodes.length === 0">
+          There are no product codes associated with Ref {{makeup.ref}}
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="button-container">
+    <button type="submit" class="btn btn-primary" (click)="back()">Back</button>
+  </div>
+</div>

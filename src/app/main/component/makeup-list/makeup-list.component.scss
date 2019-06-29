@@ -1,0 +1,58 @@
+.makeup-container.list {
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 2px solid #008da9;
+  border-radius: 15px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+  padding-bottom: 50px;
+}
+
+label {
+  padding-right: 10px;
+}
+
+.search-container.makeup-container.list {
+  padding-bottom: 0;
+}
+
+.search-field {
+  margin: 15px;
+}
+
+.search-heading {
+  padding-left: 15px;
+}
+
+.pagination-container {
+  display: flex;
+}
+
+.button-container {
+  float: right;
+}
+
+.pagination {
+  margin: 0 auto;
+}
+
+/deep/ .pagination-page.page-item.active > a.page-link {
+  background: #008da9;
+  border: #008da9;
+  color: #FFFFFF;
+  border: #008da9 1px solid;
+}
+
+/deep/ .pagination-page.page-item > a.page-link, /deep/ .pagination-prev.page-item > a.page-link,
+/deep/ .pagination-first.page-item > a.page-link, /deep/ .pagination-last.page-item > a.page-link,
+/deep/ .pagination-next.page-item > a.page-link {
+  color: #008da9;
+  border: #008da9 1px solid;
+}
+
+/deep/ .pagination-page.page-item.disabled > a.page-link, /deep/ .pagination-prev.page-item.disabled > a.page-link,
+/deep/ .pagination-first.page-item.disabled > a.page-link, /deep/ .pagination-last.page-item.disabled > a.page-link,
+/deep/ .pagination-next.page-item.disabled > a.page-link {
+  color: rgb(33, 37, 41);
+}

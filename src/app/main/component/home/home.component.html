@@ -1,0 +1,88 @@
+<app-navigation></app-navigation>
+<div class="container-fluid makeup-container">
+  <div *ngIf="showAlert" class="alert alert-{{alertType}} alert-style">
+    <strong>{{message}}</strong>
+  </div>
+  <h4>{{heading}}</h4>
+  <form #makeupForm="ngForm">
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="ref">Ref No. *</label>
+          <input [disabled]="disabled" [(ngModel)]="makeup.ref" type="text" class="form-control form-control-sm" id="ref" name="ref" required #ref="ngModel">
+          <div *ngIf="ref.invalid && (ref.dirty || ref.touched)"
+               class="alert alert-danger">
+            <div *ngIf="ref.errors.required">
+              Ref No. is required.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="size">Size</label>
+          <input [disabled]="disabled" [(ngModel)]="makeup.size" type="number" class="form-control form-control-sm" id="size" name="size" required #size="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="colour">Colour</label>
+          <input [disabled]="disabled" [(ngModel)]="makeup.colour" type="text" class="form-control form-control-sm" id="colour" name="colour" required #colour="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="winder">Winder</label>
+          <input [disabled]="disabled" [(ngModel)]="makeup.winder" type="text" class="form-control form-control-sm" id="winder" name="winder" required #winder="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="inMetres">In Metres</label>
+          <input [disabled]="disabled" [(ngModel)]="makeup.inMetres" type="text" class="form-control form-control-sm" id="inMetres" name="inMetres" required #inMetres="ngModel">
+        </div>
+        <div class="form-group double-input-container">
+          <label for="endsOne">Ends One</label>
+          <input [disabled]="disabled" [(ngModel)]="makeup.endsOne" type="text" class="form-control form-control-sm" id="endsOne" name="endsOne" required #endsOne="ngModel">
+          <div *ngIf="endsOne.invalid && (endsOne.dirty || endsOne.touched)"
+               class="alert alert-danger">
+            <div *ngIf="endsOne.errors.required">
+              Ends One is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="braider">Braider</label>
+          <input [disabled]="disabled" [(ngModel)]="makeup.braider" type="text" class="form-control form-control-sm" id="braider" name="braider" required #braider="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="carriers">Carriers</label>
+          <input [disabled]="disabled" [(ngModel)]="makeup.carriers" type="text" class="form-control form-control-sm" id="carriers" name="carriers" required #carriers="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="gears">Gears</label>
+          <input [disabled]="disabled" [(ngModel)]="makeup.gears" type="text" class="form-control form-control-sm" id="gears" name="gears" required #gears="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="core">Core</label>
+          <input [disabled]="disabled" [(ngModel)]="makeup.core" type="text" class="form-control form-control-sm" id="core" name="core" required #core="ngModel">
+        </div>
+        <div class="form-group double-input-container">
+          <label for="endsTwo">Ends Two</label>
+          <input [disabled]="disabled" [(ngModel)]="makeup.endsTwo" type="text" class="form-control form-control-sm" id="endsTwo" name="endsTwo" required #endsTwo="ngModel">
+        </div>
+      </div>
+    </div>
+    <h4>Other</h4>
+    <div class="form-group double-input-container">
+      <label for="misc1">Misc 1</label>
+      <input [disabled]="disabled" [(ngModel)]="makeup.misc1" type="text" class="form-control form-control-sm" id="misc1" name="misc1">
+      <label for="misc2">Misc 2</label>
+      <input [disabled]="disabled" [(ngModel)]="makeup.misc2" type="text" class="form-control form-control-sm" id="misc2" name="misc2">
+      <label for="misc3">Misc 3</label>
+      <input [disabled]="disabled" [(ngModel)]="makeup.misc3" type="text" class="form-control form-control-sm" id="misc3" name="misc3">
+    </div>
+    <div *ngIf="!viewMode" class="button-container">
+      <button type="button" class="btn btn-light" (click)="clear()">Clear All</button>
+      <button type="submit" class="btn btn-primary" (click)="saveMakeup()">Save</button>
+    </div>
+    <div *ngIf="viewMode" class="button-container">
+      <button type="button" class="btn btn-light" (click)="createMakeup()">Create Makeup</button>
+      <button type="submit" class="btn btn-primary" (click)="back()">Back</button>
+    </div>
+  </form>
+</div>

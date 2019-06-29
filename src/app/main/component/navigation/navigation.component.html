@@ -1,0 +1,18 @@
+<div class="logo-container">
+  <img class="logo" src="./assets/logomain.png" alt="Whittam Ropes" />
+</div>
+<nav class="navbar navbar-expand-lg" style="background-color:#008da9;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item {{createPageActive}}">
+        <a [routerLink]="'/create-makeup'" class="nav-link" href="#">Create Makeup <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item {{listPageActive}}">
+        <a [routerLink]="'/makeup-list'" class="nav-link" href="#">Makeup List</a>
+      </li>
+    </ul>
+  </div>
+</nav>
