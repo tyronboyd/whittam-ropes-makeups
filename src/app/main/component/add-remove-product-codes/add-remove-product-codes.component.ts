@@ -60,7 +60,7 @@ export class AddRemoveProductCodesComponent implements OnInit {
   }
 
   public back(): void {
-    this.router.navigate(['whittam-ropes-makeups/makeup-list']);
+    this.router.navigate(['makeup-list']);
   }
 
 }

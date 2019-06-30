@@ -25,7 +25,7 @@ export class MakeupListComponent implements OnInit {
   }
 
   public fetchMakeups(): void {
-    this.makeupSearchOptions.sortBy = 'size, colour';
+    this.makeupSearchOptions.sortBy = 'description, colour';
     if (this.makeupSearchOptions.curPageNumber && this.makeupSearchOptions.sortBy) {
       this.makeupService.getAllMakeups(this.makeupSearchOptions).subscribe(result => {
         this.makeupList = result;

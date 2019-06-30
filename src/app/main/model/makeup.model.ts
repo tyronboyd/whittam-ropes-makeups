@@ -1,8 +1,8 @@
 export class Makeup {
   public id: string;
   public ref: string;
-  public size: number;
-  public colour: string;
+  public description: string;
+  public customer: string;
   public winder: string;
   public inMetres: string;
   public endsOne: string;

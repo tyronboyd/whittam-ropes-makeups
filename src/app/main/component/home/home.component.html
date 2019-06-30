@@ -18,20 +18,16 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="size">Size</label>
-          <input [disabled]="disabled" [(ngModel)]="makeup.size" type="number" class="form-control form-control-sm" id="size" name="size" required #size="ngModel">
+          <label for="description">Description</label>
+          <input [disabled]="disabled" [(ngModel)]="makeup.description" type="text" class="form-control form-control-sm" id="description" name="description" required #description="ngModel">
         </div>
         <div class="form-group">
-          <label for="colour">Colour</label>
-          <input [disabled]="disabled" [(ngModel)]="makeup.colour" type="text" class="form-control form-control-sm" id="colour" name="colour" required #colour="ngModel">
+          <label for="customer">Customer</label>
+          <input [disabled]="disabled" [(ngModel)]="makeup.customer" type="text" class="form-control form-control-sm" id="customer" name="customer" required #customer="ngModel">
         </div>
         <div class="form-group">
           <label for="winder">Winder</label>
           <input [disabled]="disabled" [(ngModel)]="makeup.winder" type="text" class="form-control form-control-sm" id="winder" name="winder" required #winder="ngModel">
-        </div>
-        <div class="form-group">
-          <label for="inMetres">In Metres</label>
-          <input [disabled]="disabled" [(ngModel)]="makeup.inMetres" type="text" class="form-control form-control-sm" id="inMetres" name="inMetres" required #inMetres="ngModel">
         </div>
         <div class="form-group double-input-container">
           <label for="endsOne">Ends One</label>
@@ -42,6 +38,10 @@
               Ends One is required.
             </div>
           </div>
+        </div>
+        <div class="form-group">
+          <label for="inMetres">In Metres</label>
+          <input [disabled]="disabled" [(ngModel)]="makeup.inMetres" type="text" class="form-control form-control-sm" id="inMetres" name="inMetres" required #inMetres="ngModel">
         </div>
       </div>
       <div class="col-6">
@@ -79,6 +79,9 @@
     <div *ngIf="!viewMode" class="button-container">
       <button type="button" class="btn btn-light" (click)="clear()">Clear All</button>
       <button type="submit" class="btn btn-primary" (click)="saveMakeup()">Save</button>
+    </div>
+    <div *ngIf="backButton" class="button-container">
+      <button type="submit" class="btn btn-primary" (click)="back()">Back</button>
     </div>
     <div *ngIf="viewMode" class="button-container">
       <button type="button" class="btn btn-light" (click)="createMakeup()">Create Makeup</button>

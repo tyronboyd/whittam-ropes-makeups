@@ -25,6 +25,8 @@ export class HomeComponent implements OnInit {
   public disabled = false;
   @Input()
   public viewMode = false;
+  @Input()
+  public backButton = false;
 
   constructor(private makeupService: MakeupService, private inventoryService: InventoryService,
               private router: Router) { }
